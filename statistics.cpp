@@ -36,7 +36,7 @@ private:
 
 class Max : public IStatistics {
 public:
-	Max() : m_max{std::numeric_limits<double>::min()} {
+	Max() : m_max{std::numeric_limits<double>::lowest()} {
 	}
 
 	void update(double next) override {
@@ -106,7 +106,6 @@ public:
 
 private:
 	double m_mean;
-	double m_std;
 	int row;
 	std::vector <double> all_numbers;
 };
