@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.25)
 
 project(statistics)
 
-add_executable(statistics statistics.cpp)
+add_executable(statistics main.cpp)
 set_target_properties(statistics PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 target_include_directories(statistics PRIVATE include)
 
