@@ -1,29 +1,15 @@
 #pragma once
 
+#include <vector>
 #include "statistic.hpp"
 
-class STD : public IStatistics {
+class STDs : public IStatistics {
 public:
-	STD() : m_mean{0},
-			row{0}{}
+	STDs();
 
-	void update(double next) override {
-		all_numbers.push_back(next);
-		m_mean += next;
-		row += 1;
-	}
-
-	double eval() const override {
-		double sq_mean{0};
-		for (const double number: all_numbers){
-			sq_mean += (number-(m_mean/row)) * (number - (m_mean/row));
-		};
-		return std::sqrt(sq_mean/row);
-	}
-
-	const char * name() const override {
-		return "std";
-	}
+	void update(double next);
+	double eval() const;
+	const char * name() const;
 
 private:
 	double m_mean;

@@ -16,7 +16,7 @@ int main() {
 	statistics[0] = new Min{};
 	statistics[1] = new Max{};
 	statistics[2] = new Mean{};
-	statistics[3] = new STD{};
+	statistics[3] = new STDs{};
 
 	double val = 0;
 	while (std::cin >> val) {

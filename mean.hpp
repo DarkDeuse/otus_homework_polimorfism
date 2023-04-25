@@ -4,21 +4,12 @@
 
 class Mean : public IStatistics {
 public:
-	Mean() : m_mean{0},
-			 row{0}{}
+	Mean();
 
-	void update(double next) override {
-		m_mean += next;
-		row += 1;
-	}
+	void update(double next);
 
-	double eval() const override {
-		return m_mean/row;
-	}
-
-	const char * name() const override {
-		return "mean";
-	}
+	double eval() const;
+	const char * name() const;
 
 private:
 	double m_mean;

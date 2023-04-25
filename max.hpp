@@ -4,23 +4,12 @@
 
 class Max : public IStatistics {
 public:
-	Max() : m_max{std::numeric_limits<double>::lowest()} {
-	}
+	Max();
+	void update(double next);
 
-	void update(double next) override {
-		if (next > m_max) {
-			m_max = next;
-		}
-	}
+	double eval() const;
 
-	double eval() const override {
-		return m_max;
-	}
-
-	const char * name() const override {
-		return "max";
-	}
-
+	const char * name() const;
 private:
 	double m_max;
 };
